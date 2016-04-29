@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>ARIA Window Splitter (horizontal) Example</title>
+  <link href="../css/core.css" rel="stylesheet">
+  <link href="../css/table.css" rel="stylesheet">
+  <link href="css/splitter.css" rel="stylesheet">
+  <script src="js/splitter.js"></script>
+</head>
+
+<body>
+  <nav class="controlledPane" id="controlledPane" style="width:100%;">
+    <h1>Navigation Content</h1></nav>
+  <div style="width:100%;left:0px;right:0px;" tabindex=0 id="windowSplitter" aria-controls="controlledPane" aria-orientation="horizontal" aria-label="window splitter" role="separator" aria-expanded="true">
+    <div id="windowSplitterInner"></div>
+  </div>
+  <main id="main" style="width:100%;">
+    <h1>Main Content</h1></main>
+</body>

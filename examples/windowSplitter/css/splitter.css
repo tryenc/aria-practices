@@ -1,0 +1,49 @@
+nav {
+    position: absolute;
+    overflow: hidden;
+    border: 1px #888888 solid;
+    z-index: 0;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    padding: 0px;
+    border-width: 0px;
+}
+main {
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    padding: 0px;
+    border-width: 0px;
+    position: absolute;
+    overflow: hidden;
+    border: 1px #888888 solid;
+    z-index: 0;
+}
+div#windowSplitter {
+    top: 0px;
+    height: 5px;
+    bottom: 0px;
+    padding: 0px;
+    border-width: 0px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 5;
+    -moz-user-select: none;
+}
+div#windowSplitter[aria-orientation="vertical"] {
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+}
+div#windowSplitter[aria-orientation="horizontal"] {
+    height: 5px;
+    width: 100%;
+    cursor: row-resize;
+}
+div#windowSplitter:focus {
+    background: blue;
+}
+div#windowSplitter.dragging {
+    background: red;
+}

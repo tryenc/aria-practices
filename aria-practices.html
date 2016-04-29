@@ -2810,17 +2810,18 @@
         <h4>WAI-ARIA Roles, States, and Properties</h4>
         <ul>
           <li>The splitter has role <a href="separator" class="role-reference">separator</a>.</li>
+          <li><a href="#aria-orientation" class="state-reference">aria-orientation</a> property should be set appropriately.</li>
           <li>If the splitter is expandable and collapsible, keep the splitter's <a href="#aria-expanded" class="state-reference">aria-expanded</a> state updated accordingly.</li>
           <li>Label the splitter with <a href="aria-label" class="property-reference">aria-label</a>, <a href="aria-labelledby" class="property-reference">aria-labelledby</a>, or the <code>title</code> attribute. </li>
           <li>Set the <a href="#aria-controls" class="property-reference">aria-controls</a> attribute of the element with role <code>separator</code> role to the IDs of the panes whose sizes it controls. </li>
         </ul>
+        <p class="ednote">Should a pane that is totally hidden by collapsing a splitter completely (or pressing enter or clicking on the splitter) have display:none set on it. If it is then should aria-controls be removed from the splitter?</p>
       </section>
 
       <section class="notoc">
         <h4>Example</h4>
-        <p class="note">Any examples referenced here that are hosted outside www.w3.org may have changed and may not accurately exemplify the guidance in this section. The APG task force is developing examples for APG version 1.1 that will be directly incorporated into the guide.</p>
-        <ul>
-          <li><a href="http://archive.dojotoolkit.org/nightly/dojotoolkit/dijit/tests/layout/test_BorderContainer.html" title="dijit.layout.BorderContainer Test" target="_blank" rel="nofollow">Dojo Window splitter</a></li>
+        <ul><li><a href="examples/windowsplitter/VerticalSplitter.html">Vertical Splitter</a></li>
+        <li><a href="examples/windowsplitter/HorizontalSplitter.html">Horizontal Splitter</a></li>
         </ul>
       </section>
     </section>
