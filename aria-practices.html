@@ -2787,33 +2787,33 @@
 
     <section class="widget" id="windowsplitter">
       <h3>Window Splitter</h3>
-      <p>Visible separator between sections of a Window that is used to modify the size of the panes.</p>
-      <p>A Window Splitter can take one of two forms -- fixed size and variable size.</p>
+      <p>
+      A window splitter, also known as a <a href="#separator" class="role-reference">separator</a>, is a widget that provides a visible boundary between sections, or panes, of a Window and enables the user to resize the panes by moving the separator. 
+      A window splitter may have either a fixed size or a variable size.
+      </p>
 
       <section class="notoc">
         <h4>Keyboard Interaction</h4>
-
+        <p>When a window splitter is focused: </p>
         <ul>
-          <li><kbd>Tab</kbd>: Moves focus   in to and out of the splitter. </li>
           <li><kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd>: Move a vertical splitter left and right.</li>
           <li><kbd>Up Arrow</kbd> and <kbd>Down Arrow</kbd>: Move a horizontal splitter up and down.</li>
-          <li><kbd>Enter</kbd>: If pane controlled by the splitter is not collapsed, then collapse the pane. If the pane is collapsed then restore the splitter to its previous position. </li>
-          <li><kbd>End</kbd> (Optional): moves splitter so the associated pane is the largest allowed size. </li>
-          <li><kbd>Home</kbd> (Optional): Moves splitter so the associated pane is the smallest allowed size. This may collapse the pane completely. </li>
-          <li><kbd>F6</kbd> (Optional): Cycle through the window   panes. </li>
+          <li><kbd>Enter</kbd>: If the pane controlled by the splitter is not collapsed, collapses the pane. If the pane is collapsed, restores the splitter to its previous position. </li>
+          <li><kbd>End</kbd> (Optional): moves the splitter so the controlled pane has the largest allowed size. </li>
+          <li><kbd>Home</kbd> (Optional): Moves the splitter so the controlled pane has the smallest allowed size. It may completely collapse the pane. </li>
+          <li><kbd>F6</kbd> (Optional): Cycles through the window   panes. </li>
         </ul>
-
-        <p class="note">A fixed size splitter simply omits implementation of the arrow keys. </p>
+        <p class="note">A fixed size splitter omits implementation of arrow key functionality. </p>
       </section>
 
       <section class="notoc">
         <h4>WAI-ARIA Roles, States, and Properties</h4>
         <ul>
-          <li>The splitter has role <a href="separator" class="role-reference">separator</a>.</li>
-          <li><a href="#aria-orientation" class="state-reference">aria-orientation</a> property should be set appropriately.</li>
-          <li>If the splitter is expandable and collapsible, keep the splitter's <a href="#aria-expanded" class="state-reference">aria-expanded</a> state updated accordingly.</li>
-          <li>Label the splitter with <a href="aria-label" class="property-reference">aria-label</a>, <a href="aria-labelledby" class="property-reference">aria-labelledby</a>, or the <code>title</code> attribute. </li>
-          <li>Set the <a href="#aria-controls" class="property-reference">aria-controls</a> attribute of the element with role <code>separator</code> role to the IDs of the panes whose sizes it controls. </li>
+          <li>The element that receives focus has role <a href="#separator" class="role-reference">separator</a>.</li>
+          <li>The element with role <code>separator</code> has a the <a href="#aria-orientation" class="property-reference">aria-orientation</a> property set to match the orientation of the splitter. </li>
+          <li>If the splitter can be expanded and collapsed, the element with role <code>separator</code> has the <a href="#aria-expanded" class="state-reference">aria-expanded</a> state set to <code>true</code> when it is expanded and set to <code>false</code> when it is collapsed. </li>
+          <li>The element with role <code>separator</code> is labeled with <a href="aria-label" class="property-reference">aria-label</a>, <a href="aria-labelledby" class="property-reference">aria-labelledby</a>, or the <code>title</code> attribute. </li>
+          <li>The element with role <code>separator</code> has the <a href="#aria-controls" class="property-reference">aria-controls</a> property set to the IDs of the panes it resizes. </li>
         </ul>
         <p class="ednote">Should a pane that is totally hidden by collapsing a splitter completely (or pressing enter or clicking on the splitter) have display:none set on it. If it is then should aria-controls be removed from the splitter?</p>
       </section>
