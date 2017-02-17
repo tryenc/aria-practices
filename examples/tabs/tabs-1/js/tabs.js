@@ -152,8 +152,12 @@
     // Set the tab as selected
     tab.setAttribute('aria-selected', 'true');
 
-    // Get the value of aria-controls (which is an ID)
-    var controls = tab.getAttribute('aria-controls');
+    // Get the value for aria-controls (which is an ID)
+    var controls = tab.getAttribute('data-controls');
+
+    // Set aria-controls and remove data-controls
+    tab.removeAttribute('data-controls');
+    tab.setAttribute('aria-controls', controls);
 
     // Remove hidden attribute from tab panel to make it visible
     document.getElementById(controls).removeAttribute('hidden');
@@ -166,9 +170,25 @@
 
   // Deactivate all tabs and tab panels
   function deactivateTabs () {
+    // Loop through all tab panels
     for (t = 0; t < tabs.length; t++) {
+      // Get the value of aria-controls
+      var controls = tabs[t].getAttribute('aria-controls');
+
+      // If aria-controls excists and has a value
+      // replace it with data-controls
+      if (controls != null) {
+        tabs[t].removeAttribute('aria-controls');
+        tabs[t].setAttribute('data-controls', controls);
+      };
+
+      // Remove inactive tabs from the tab order
       tabs[t].setAttribute('tabindex', '-1');
+
+      // Set aria-selected to false
       tabs[t].setAttribute('aria-selected', 'false');
+
+      // Remove the focus event handler
       tabs[t].removeEventListener('focus', focusEventHandler);
     };
 
